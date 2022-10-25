@@ -15,11 +15,11 @@
         // 1. Arrange - Instance of NotesView Class
         const notesmodel = new NotesModel();
         const notesview = new NotesView(notesmodel);
-
+        // Add two notes
         notesmodel.addNotes('First note');
         notesmodel.addNotes('Second note');
 
-        // 2. Act - calls the displayNotes method
+        // 2. Act - calls the displayNotes method -> added to browser
         notesview.displayNotes();
 
         // 3. Assert, what should the test result in?

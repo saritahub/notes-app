@@ -1,5 +1,3 @@
-// const NotesModel = require('./NotesModel')
-
 class NotesView {
     constructor(model) {
         this.model = model; 
@@ -10,8 +8,6 @@ class NotesView {
     displayNotes() {
         // get the list of notes
         // For each note, the div element contains HTML class note
-        // const noteDiv = document.querySelector('div')'
-        // noteDiv.classList.toggle("div", true)
         const notes = this.model.getNotes();
         
         notes.forEach(note => {
@@ -22,7 +18,6 @@ class NotesView {
             this.mainContainerElement.append(newElement);
         })
     }
-
 }
 
 module.exports = NotesView;
