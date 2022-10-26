@@ -25,13 +25,14 @@ class NotesView {
         newElement.innerText = userInput;
         document.querySelector('#user-input').value = '';
         this.mainContainerElement.append(newElement);       
-         // notes.forEach(note => {
-        //     const newElement = document.createElement('div');
-        //     newElement.className = 'note';
-        //     newElement.innerText = note;
-        //     // Add to DOM tree, within the 'main container' div
-        //     this.mainContainerElement.append(newElement);
-        // })
+  
+        // WALKTHROUGH EXAMPLE
+        // notes.forEach(note => {
+        //     const noteEl = document.createElement('div');
+        //     noteEl.textContent = note;
+        //     noteEl.className = 'note';
+        //     this.mainContainerEl.append(noteEl);
+        //   })
     }
     
 }
