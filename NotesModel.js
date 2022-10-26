@@ -7,7 +7,7 @@ class NotesModel {
         return this.notes;
     }
 
-    addNotes(title) {
+    addNote(title) {
         this.notes.push(title);
     }
 
