@@ -3,10 +3,8 @@ console.log("The notes app is running")
 
 const NotesModel = require('./NotesModel');
 const NotesView = require('./NotesView');
-const client = require('./notesclient');
 const NotesClient = require('./notesclient');
 // const newNote = document.querySelector('#user-input').value;
-
 
 const model = new NotesModel();
 const notesClient = new NotesClient();
