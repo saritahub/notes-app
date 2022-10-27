@@ -15,24 +15,23 @@ class NotesView {
     }
 
       displayNotes() {
-        // get the list of notes
-        // For each note, the div element contains HTML class note
+        // 1. Remove all previous notes
+         document.querySelectorAll('.note').forEach(element => {
+            element.remove();
+        });
+        
+        // 2. For each note, create and append a new element on the main container
         const notes = this.model.getNotes();
-
         const userInput = document.querySelector('#user-input').value 
-        const newElement = document.createElement('div');
-        newElement.className = 'note';
-        newElement.innerText = userInput;
+        notes.forEach (note => {
+            const noteElement = document.createElement('div');
+            noteElement.textContent = note;
+            noteElement.className = 'note';
+            this.mainContainerElement.append(noteElement); 
+        })   
+        document.querySelector('#user-input').value = userInput;
+        // // Reset text field (blank)
         document.querySelector('#user-input').value = '';
-        this.mainContainerElement.append(newElement);       
-  
-        // WALKTHROUGH EXAMPLE
-        // notes.forEach(note => {
-        //     const noteEl = document.createElement('div');
-        //     noteEl.textContent = note;
-        //     noteEl.className = 'note';
-        //     this.mainContainerEl.append(noteEl);
-        //   })
     }
     
 }

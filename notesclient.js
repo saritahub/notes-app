@@ -1,8 +1,11 @@
-class notesClient {
-    // constructor() {
-
-    // }
+class NotesClient {
+   loadNotes(callbackFunction) {
+    fetch('http://localhost:3000/notes')
+    .then((response) => response.json()) 
+    .then((data) => {
+      console.log(data)
+    });
+   }
 }
 
-// const client = new Client();
-// console.log(client)
+module.exports = NotesClient;
