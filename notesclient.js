@@ -1,5 +1,4 @@
 class NotesClient {   
-
    loadNotes(callbackFn) {
       let url = 'http://localhost:3000/notes';
       fetch(url)
@@ -9,6 +8,8 @@ class NotesClient {
         // passes the data through the callback function
     });
    }
+
+
 }
 
 module.exports = NotesClient;
