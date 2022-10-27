@@ -11,7 +11,7 @@ const model = new NotesModel();
 // model.addNote("Cook pasta");
 console.log(model.getNotes()); // Works - displayed in console
 
-const view = new NotesView(model);
+const view = new NotesView(model, client);
 // view.addNewNote();
 
 view.displayNotes(model.getNotes()); // Adds above notes to the HTML page 

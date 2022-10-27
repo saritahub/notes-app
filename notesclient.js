@@ -1,9 +1,12 @@
-class NotesClient {
-   loadNotes(callbackFunction) {
-    fetch('http://localhost:3000/notes')
-    .then((response) => response.json()) 
-    .then((data) => {
-      console.log(data)
+class NotesClient {   
+
+   loadNotes(callbackFn) {
+      let url = 'http://localhost:3000/notes';
+      fetch(url)
+      .then((response) => response.json()) 
+      .then((data) => {
+        callbackFn(data)
+        // passes the data through the callback function
     });
    }
 }
