@@ -1,6 +1,7 @@
 class NotesView {
-    constructor(model) {
+    constructor(model, client) {
         this.model = model; 
+        this.client = client;
         this.mainContainerElement = document.querySelector('#main-container');
 
         document.querySelector('#add-note-btn').addEventListener('click', () => {
@@ -14,7 +15,7 @@ class NotesView {
         this.displayNotes();
     }
 
-      displayNotes() {
+    displayNotes() {
         // 1. Remove all previous notes
          document.querySelectorAll('.note').forEach(element => {
             element.remove();
@@ -33,6 +34,14 @@ class NotesView {
         // // Reset text field (blank)
         document.querySelector('#user-input').value = '';
     }
+
+    // new 
+    displayNotesFromApi() {
+        this.client.loadNotes((notes) => {
+          this.model.setNotes(notes);
+          this.displayNotes();
+        })
+      }
     
 }
 
