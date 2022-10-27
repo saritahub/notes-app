@@ -46,4 +46,19 @@
         // Check that the text was updated
         expect(document.querySelectorAll('div.note')[0].textContent).toBe("Test this note")
       })
+
+      it('displays a list of notes', () => {
+        document.body.innerHTML = fs.readFileSync('./index.html');
+        const model = new NotesModel();
+        const fakeAPI = {
+          loadNotes: (callbackFunction) => { 
+            callbackFunction(["Make tea", "Go for a walk"])
+        }
+      }
+        const view = new NotesView(model, fakeAPI);
+        view.displayNotesFromApi();
+        const viewAllNotes = document.querySelectorAll('.note');
+        expect(viewAllNotes[0].textContent).toEqual("Make tea");
+        expect(viewAllNotes[1].textContent).toEqual("Go for a walk");
+      });
  })
